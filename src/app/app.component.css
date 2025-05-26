@@ -1,0 +1,13 @@
+.main{
+    background-color: #fafafa;
+    border-radius: 30px;
+    display: flex;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.top-content{
+    display: flex;
+}
+.bottom-content{
+    display: flex;
+}
