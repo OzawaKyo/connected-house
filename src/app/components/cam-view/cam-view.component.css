@@ -1,14 +1,13 @@
 .cam-view{
     display: flex;
-    width: 900px;
-    height: 400px;
+    width: 750px;
+    height: 350px;
     background-image: url("/images/couch.png");
     background-size: 100% 130%;
     background-position: 50% 70%;
     background-repeat: no-repeat;
     border-radius: 30px;
     margin-top: 20px;
-    margin-left: 20px;
     font-size: 0.5rem;
     
 }

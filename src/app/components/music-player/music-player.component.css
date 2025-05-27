@@ -1,0 +1,220 @@
+.music-player-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+    height: 300px;
+    /* margin: 20px; */
+    /* background: linear-gradient(to bottom, #D3DAE8, #F1E7D4); */
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #E7E6E9;
+
+  }
+  
+.music-player-card {
+    background: #E7E6E9;
+    border-radius: 25px;
+    padding: 0.6rem;
+    width: 95%;
+    height: 95%;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.2rem;
+    margin-top: 0.2rem;
+}
+  
+.title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+    font-family: 'Ancizar Sans', sans-serif;
+}
+  
+.status {
+    font-size: 0.7rem;
+    color: #6b7280;
+    margin: 0;
+    font-family: 'Ancizar Sans', sans-serif;
+}
+  
+.menu-dot {
+    position: relative;
+    width: 2.5rem;
+    height: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.menu-dot::before {
+    content: '';
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: #000000;
+    top: 0.15rem;
+    left: 0.15rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+  
+.menu-dot.active {
+    background-color: rgb(255, 255, 255);
+}
+  
+.menu-dot.active::before {
+    transform: translateX(1.1rem);
+}
+  
+.menu-dot:hover {
+    background-color: #d1d5db;
+}
+  
+.menu-dot.active:hover {
+    background-color: #ffffff;
+}
+  
+/* Time Display */
+.time-display {
+    text-align: center;
+    margin-bottom: 0.2rem;
+}
+  
+.current-time {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    font-family: 'Ancizar Sans', sans-serif;
+}
+  
+.duration {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #111827;
+    margin-left: 0.3rem;
+    font-family: 'Ancizar Sans', sans-serif;
+}
+  
+/* Progress and Album Art */
+.progress-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+}
+  
+.progress-circle {
+    width: 9rem;
+    height: 9rem;
+    transform: rotate(-90deg);
+}
+  
+.progress-stroke {
+    transition: all 0.3s ease-out;
+}
+  
+.album-art-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.album-art {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #e5e7eb;
+    position: relative;
+    perspective: 1000px;
+    margin: 0.5rem;
+}
+  
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center;
+    backface-visibility: hidden;
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotateY(0) scale(1);
+    }
+    50% {
+      transform: rotateY(180deg) scale(1.1);
+    }
+    100% {
+      transform: rotateY(360deg) scale(1);
+    }
+}
+  
+.album-art img.spin {
+    animation: spin 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+  
+/* Controls */
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.control-btn {
+    padding: 0.4rem;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #4b5563;
+}
+  
+.control-btn:hover {
+    background-color: #f3f4f6;
+}
+  
+.play-btn {
+    padding: 0.7rem;
+    background-color: #D0D2D4;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: white;
+}
+  
+.play-btn:hover {
+    background-color: #1f2937;
+}
+  
+.control-btn svg,
+.play-btn svg {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+}
+  

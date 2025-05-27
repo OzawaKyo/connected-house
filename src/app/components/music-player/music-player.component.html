@@ -1,0 +1,109 @@
+<div class="music-player-container">
+    <div class="music-player-card">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-info">
+          <h1 class="title">Speakers</h1>
+          <p class="status">Playing</p>
+        </div>
+        <div class="menu-dot" [class.active]="isActive" (click)="toggleSwitch()"></div>
+      </div>
+  
+      <!-- Time Display -->
+      <div class="time-display">
+        <span class="current-time">{{duration}}</span>
+        <span class="duration">{{currentTime}}</span>
+      </div>
+  
+      <!-- Circular Progress and Album Art -->
+      <div class="progress-container">
+        <svg class="progress-circle" viewBox="0 0 200 200">
+          <!-- Background circle -->
+          <circle
+            cx="100"
+            cy="100"
+            r="90"
+            stroke="#CBCACD"
+            stroke-width="2"
+            fill="none"
+          />
+          <!-- Progress circle -->
+          <circle
+            cx="100"
+            cy="100"
+            r="90"
+            stroke="black"
+            stroke-width="5"
+            fill="none"
+            stroke-dasharray="565.48"
+            [style.strokeDashoffset]="565.48 - (565.48 * progress / 100)"
+            stroke-linecap="round"
+            class="progress-stroke"
+          />
+        </svg>
+        
+        <!-- Album Art -->
+        <div class="album-art-container">
+          <div class="album-art">
+            <img 
+              [src]="currentCover"
+              [class.fade-out]="isTransitioning"
+              [class.fade-in]="!isTransitioning"
+              [class.spin]="isSpinning"
+              alt="Album Art"
+            />
+          </div>
+        </div>
+      </div>
+  
+      <!-- Controls -->
+      <div class="controls">
+        <button class="control-btn" (click)="toggleShuffle()" [class.active]="isShuffled">
+          <!-- Shuffle Icon -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="black" stroke="black" stroke-width="2">
+            <polyline points="16,3 21,3 21,8"></polyline>
+            <path d="M4,20 L21,3"></path>
+            <polyline points="21,16 21,21 16,21"></polyline>
+            <path d="M15,15 L21,21"></path>
+            <path d="M4,4 L9,9"></path>
+          </svg>
+        </button>
+        
+        <button class="control-btn" (click)="skipBackward()">
+          <!-- Skip Back Icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="black" stroke-width="2">
+            <polygon points="19,20 9,12 19,4"></polygon>
+            <line x1="5" y1="19" x2="5" y2="5"></line>
+          </svg>
+        </button>
+        
+        <button class="play-btn" (click)="togglePlay()">
+          <!-- Play/Pause Icon -->
+          <svg *ngIf="!isPlaying" width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="black" stroke-width="2">
+            <polygon points="5,3 19,12 5,21"></polygon>
+          </svg>
+          <svg *ngIf="isPlaying" width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="black" stroke-width="2">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+        </button>
+        
+        <button class="control-btn" (click)="skipForward()">
+          <!-- Skip Forward Icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="black" stroke-width="2">
+            <polygon points="5,4 15,12 5,20"></polygon>
+            <line x1="19" y1="5" x2="19" y2="19"></line>
+          </svg>
+        </button>
+        
+        <button class="control-btn">
+          <!-- Volume Icon -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="black" stroke="black" stroke-width="2">
+            <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"></polygon>
+            <path d="M19.07,4.93a10,10,0,0,1,0,14.14M15.54,8.46a5,5,0,0,1,0,7.07"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  

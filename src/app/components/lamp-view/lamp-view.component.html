@@ -1,0 +1,50 @@
+<div class="lamp-view-container">
+    <div class="lamp-view-header">
+        <div class="lamp-view-header-title">
+            <div class="lamp-view-header-title-text">
+                <h1>Living Room</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                    <path d="m6 9 6 6 6-6" />
+                </svg>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-info-icon lucide-info">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4" />
+                <path d="M12 8h.01" />
+            </svg>
+        </div>
+        <div class="arrows">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-left-icon lucide-chevron-left">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-right-icon lucide-chevron-right">
+                <path d="m9 18 6-6-6-6" />
+            </svg>
+        </div>
+    </div>
+    <div class="lamp-view-body">
+        <div class="lamp-view-body-header">
+            <div class="lamp-view-body-header-title">
+                <h1>Smart Lamp</h1>
+                <h2>3 device(-s)</h2>
+            </div>
+            <div class="menu-dot" [class.active]="isActive" (click)="toggleSwitch()"></div>
+        </div>
+        <div class="brightness-pill-container">
+            <div class="brightness-pill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="brightness-icon-inside lucide lucide-sun-icon lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <div class="brightness-fill" [ngStyle]="{ width: brightness + '%' }"></div>
+                <span class="brightness-value-inside">{{ brightness }}%</span>
+                <input type="range" min="0" max="100" [(ngModel)]="brightness" class="brightness-range"/>
+            </div>
+        </div>
+    </div>
+</div>

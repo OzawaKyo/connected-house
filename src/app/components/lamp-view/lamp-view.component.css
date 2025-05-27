@@ -1,0 +1,205 @@
+.lamp-view-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 230px;
+    height: 300px;
+    background-color: #A9ACB6;
+    border-radius: 25px;
+    color: #fafafa;
+    font-family: 'Ancizar Sans', sans-serif;
+    font-size: 0.6rem;
+}
+.lamp-view-header{
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('/images/lamp.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 6px;
+
+}
+.lamp-view-header-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lamp-view-header-title-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.arrows{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 60px;
+}
+.lamp-view-body{
+    background-color: #B1B5BD;
+    width: 100%;
+    height: 40%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lamp-view-body-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50%;
+    width: 90%;
+}
+.lamp-view-body-header-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.lamp-view-body-header-title h1{
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+}
+.lamp-view-body-header-title h2{
+    font-size: 0.8rem;
+    margin: 0;
+    color: #e7e7e7;
+}
+
+
+
+
+
+
+.menu-dot {
+    position: relative;
+    width: 2.5rem;
+    height: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+.menu-dot::before {
+    content: '';
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: #000000;
+    top: 0.15rem;
+    left: 0.15rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.menu-dot.active {
+    background-color: #ffffff;
+}
+
+.menu-dot.active::before {
+    transform: translateX(1.1rem);
+}
+
+.menu-dot:hover {
+    background-color: #d1d5db;
+}
+
+.menu-dot.active:hover {
+    background-color: #ffffff;
+}
+
+.brightness-pill-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 2.5rem;
+    margin: 1rem 0 0.5rem 0;
+    padding: 0 1rem;
+}
+
+.brightness-pill {
+    position: relative;
+    flex: 1 1 auto;
+    height: 2rem;
+    background: #bfc2c9;
+    border-radius: 1.2rem;
+    margin: 0 1rem;
+    overflow: hidden;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+
+.brightness-icon-inside {
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    color: black;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.brightness-value-inside {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    font-size: 1.1rem;
+    color: #e4e4e4;
+    font-weight: 600;
+    min-width: 2.5rem;
+    text-align: right;
+}
+
+.brightness-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #fff;
+    border-radius: 1.2rem;
+    z-index: 1;
+    transition: width 0.2s;
+}
+
+.brightness-range {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* Remove old icon and value margin if present */
+.brightness-icon, .brightness-value {
+    margin: 0 !important;
+    display: none !important;
+}
+
+/* Remove old slider styles if present */
+.brightness-slider-container, .brightness-slider, .brightness-slider::-webkit-slider-thumb, .brightness-slider::-webkit-slider-runnable-track, .brightness-slider::-moz-range-thumb, .brightness-slider::-moz-range-track, .brightness-slider::-ms-thumb, .brightness-slider::-ms-fill-lower, .brightness-slider::-ms-fill-upper, .brightness-thumb {
+    display: none !important;
+}
+
